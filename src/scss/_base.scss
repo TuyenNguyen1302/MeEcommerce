@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+:root {
+    --gradient-color: linear-gradient(#7787c5dc, #636FA4);
+    --blue-color: #636FA4;
+    --dark-blue-color: #4d536e;
+    --rose-color: #E8CBC0;
+    --background-color: #acbdce3f;
+    --box-shadow: 0px 0px 3px var(--blue-color);
+    --hover-shadow: 0px 0px 8px #4d536e;
+    --boder-radius: 5px;
+}
+
+body {
+    width: 1263px;
+    margin: 0 auto;
+    background: var(--background-color);
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    font-weight: 500;
+}
+
+button,
+a {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input {
+    padding: 5px 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+i{
+    color: var(--dark-blue-color);
+}
+
+.border{
+    box-shadow: var(--box-shadow);
+    border-radius: var(--boder-radius);
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 60px 30px 60px;
+}
+
+.middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 18px;
+    font-weight: 500;
+    opacity: 0;
+    color: white;
+}

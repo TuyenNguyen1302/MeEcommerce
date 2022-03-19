@@ -1,0 +1,250 @@
+// HEADER
+.header {
+    flex-direction: column;
+    background: white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    &-above {
+        width: 100%;
+        padding: 5px 60px;
+        justify-content: left;
+        &-logo {
+            width: 270px;
+            justify-content: left;
+        }
+        &-search {
+            background: white;
+            margin-left: 10px;
+            width: 460px;
+            input {
+                width: 100%;
+            }
+            button {
+                background: var(--rose-color);
+                box-shadow: var(--box-shadow);
+                padding: 10px 15px;
+            }
+            button:hover{
+                box-shadow: var(--hover-shadow);
+            }
+        }
+        &-link {
+            margin: 0 auto;
+            margin-right: 0;
+            grid-gap: 20px;
+            a {
+                font-size: 16px;
+            }
+            &-item {
+                grid-gap: 10px;
+                i {
+                    font-size: 18px;
+                    transition: 0.2s;
+                }
+                .number {
+                    width: fit-content;
+                    padding: 3px 10px;
+                    background: red;
+                    border-radius: 50%;
+                    color: white;
+                }
+            }
+            .account-link {
+                align-items: flex-start;
+                flex-direction: column;
+                a {
+                    margin-left: 5px;
+                }
+                a:hover {
+                    transform: scale(1.2);
+                }
+            }
+            &-item:hover i {
+                transform: scale(1.5);
+                color: var(--blue-color);
+            }
+        }
+    }
+    &-nav {
+        background: var(--gradient-color);
+        width: 100%;
+        padding: 0 60px;
+        justify-content: left;
+        grid-gap: 10px;
+        &-type {
+            width: 270px;
+            background: var(--rose-color);
+            box-shadow: var(--box-shadow);
+            padding: 10px;
+        }
+        &-dropdown {
+            height: 100%;
+            a {
+                color: white;
+                margin-right: 20px;
+                padding: 7px 0;
+            }
+            a:hover {
+                border-bottom: 3px solid var(--rose-color);
+            }
+            i {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// FOOTER
+.footer {
+    background: white;
+    text-align: left;
+    &-signup {
+        background: var(--gradient-color);
+        color: white;
+        padding: 30px 0;
+        h4 {
+            grid-gap: 10px;
+            i {
+                color: white;
+                font-size: 40px;
+            }
+            div p:last-child {
+                font-size: 15px;
+                font-weight: 200;
+            }
+        }
+        &-input {
+            width: 550px;
+            background: white;
+            box-shadow: 0 0 3px white;
+            input {
+                width: 100%;
+            }
+            button {
+                padding: 10px 15px;
+                background: var(--rose-color);
+            }
+        }
+        &-icon {
+            grid-gap: 30px;
+            .icon {
+                background: var(--rose-color);
+                border-radius: 50%;
+                padding: 5px 8px;
+                position: relative;
+                .tooltip {
+                    top: -50px;
+                }
+            }
+            .icon:hover .tooltip,
+            .icon:hover i {
+                opacity: 1;
+                color: white;
+                transition: 0.3s;
+            }
+            .face:hover,
+            .face .tooltip {
+                background: #0b84f0;
+            }
+            .ins:hover,
+            .ins .tooltip {
+                background: #e60a75;
+            }
+            .tiktok:hover,
+            .tiktok .tooltip {
+                background: black;
+            }
+            .ytb:hover,
+            .ytb .tooltip {
+                background: #fc0404;
+            }
+        }
+    }
+    .middle {
+        margin: 0 auto;
+    }
+    &-link {
+        padding: 30px 0;
+        width: fit-content;
+        &-item {
+            margin-right: 90px;
+            h4 {
+                margin: 20px 0;
+            }
+            a {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 300;
+                font-size: 14px;
+            }
+            &-logo {
+                width: 360px;
+            }
+            &-address {
+                width: 350px;
+                margin: 10px 0 0 25px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+//PRODUCT CARD DETAIL
+.card-detail {
+    background: white;
+    position: relative;
+    &-img {
+        img {
+            width: 210px;
+            height: 210px;
+        }
+    }
+    &-sale {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        background: red;
+        border-radius: 10px;
+        padding: 10px 5px;
+        color: white;
+    }
+    &-info {
+        &-price {
+            padding: 10px;
+            .new {
+                color: red;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.card-detail:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+//BANNER
+.banner {
+    padding-left: 10px;
+}
+
+//CATEGORY ~ DANH MUC SAN PHAM
+.category {
+    background: white;
+    a {
+        padding: 5px 10px;
+        justify-content: left;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 2px 0;
+        img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+    }
+    a:hover{
+        box-shadow: var(--hover-shadow);
+    }
+}

@@ -1,38 +1,301 @@
-.App {
-  text-align: center;
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto"; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+:root {
+  --gradient-color: linear-gradient(#7787c5dc, #636FA4);
+  --blue-color: #636FA4;
+  --dark-blue-color: #4d536e;
+  --rose-color: #E8CBC0;
+  --background-color: #acbdce3f;
+  --box-shadow: 0px 0px 3px var(--blue-color);
+  --hover-shadow: 0px 0px 8px #4d536e;
+  --boder-radius: 5px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+body {
+  width: 1263px;
+  margin: 0 auto;
+  background: var(--background-color); }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button,
+input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  font-weight: 500; }
+
+button,
+a {
+  cursor: pointer;
+  font-size: 18px; }
+
+input {
+  padding: 5px 10px; }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+i {
+  color: var(--dark-blue-color); }
+
+.border {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--boder-radius);
+  overflow: hidden; }
+
+.container {
+  margin: 0 60px 30px 60px; }
+
+.middle {
   display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 18px;
+  font-weight: 500;
+  opacity: 0;
+  color: white; }
+
+.header {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  background: white;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 1; }
+  .header-above {
+    width: 100%;
+    padding: 5px 60px;
+    justify-content: left; }
+    .header-above-logo {
+      width: 270px;
+      justify-content: left; }
+    .header-above-search {
+      background: white;
+      margin-left: 10px;
+      width: 460px; }
+      .header-above-search input {
+        width: 100%; }
+      .header-above-search button {
+        background: var(--rose-color);
+        box-shadow: var(--box-shadow);
+        padding: 10px 15px; }
+      .header-above-search button:hover {
+        box-shadow: var(--hover-shadow); }
+    .header-above-link {
+      margin: 0 auto;
+      margin-right: 0;
+      grid-gap: 20px; }
+      .header-above-link a {
+        font-size: 16px; }
+      .header-above-link-item {
+        grid-gap: 10px; }
+        .header-above-link-item i {
+          font-size: 18px;
+          transition: 0.2s; }
+        .header-above-link-item .number {
+          width: fit-content;
+          padding: 3px 10px;
+          background: red;
+          border-radius: 50%;
+          color: white; }
+      .header-above-link .account-link {
+        align-items: flex-start;
+        flex-direction: column; }
+        .header-above-link .account-link a {
+          margin-left: 5px; }
+        .header-above-link .account-link a:hover {
+          transform: scale(1.2); }
+      .header-above-link-item:hover i {
+        transform: scale(1.5);
+        color: var(--blue-color); }
+  .header-nav {
+    background: var(--gradient-color);
+    width: 100%;
+    padding: 0 60px;
+    justify-content: left;
+    grid-gap: 10px; }
+    .header-nav-type {
+      width: 270px;
+      background: var(--rose-color);
+      box-shadow: var(--box-shadow);
+      padding: 10px; }
+    .header-nav-dropdown {
+      height: 100%; }
+      .header-nav-dropdown a {
+        color: white;
+        margin-right: 20px;
+        padding: 7px 0; }
+      .header-nav-dropdown a:hover {
+        border-bottom: 3px solid var(--rose-color); }
+      .header-nav-dropdown i {
+        margin-left: 5px; }
 
-.App-link {
-  color: #61dafb;
-}
+.footer {
+  background: white;
+  text-align: left; }
+  .footer-signup {
+    background: var(--gradient-color);
+    color: white;
+    padding: 30px 0; }
+    .footer-signup h4 {
+      grid-gap: 10px; }
+      .footer-signup h4 i {
+        color: white;
+        font-size: 40px; }
+      .footer-signup h4 div p:last-child {
+        font-size: 15px;
+        font-weight: 200; }
+    .footer-signup-input {
+      width: 550px;
+      background: white;
+      box-shadow: 0 0 3px white; }
+      .footer-signup-input input {
+        width: 100%; }
+      .footer-signup-input button {
+        padding: 10px 15px;
+        background: var(--rose-color); }
+    .footer-signup-icon {
+      grid-gap: 30px; }
+      .footer-signup-icon .icon {
+        background: var(--rose-color);
+        border-radius: 50%;
+        padding: 5px 8px;
+        position: relative; }
+        .footer-signup-icon .icon .tooltip {
+          top: -50px; }
+      .footer-signup-icon .icon:hover .tooltip,
+      .footer-signup-icon .icon:hover i {
+        opacity: 1;
+        color: white;
+        transition: 0.3s; }
+      .footer-signup-icon .face:hover,
+      .footer-signup-icon .face .tooltip {
+        background: #0b84f0; }
+      .footer-signup-icon .ins:hover,
+      .footer-signup-icon .ins .tooltip {
+        background: #e60a75; }
+      .footer-signup-icon .tiktok:hover,
+      .footer-signup-icon .tiktok .tooltip {
+        background: black; }
+      .footer-signup-icon .ytb:hover,
+      .footer-signup-icon .ytb .tooltip {
+        background: #fc0404; }
+  .footer .middle {
+    margin: 0 auto; }
+  .footer-link {
+    padding: 30px 0;
+    width: fit-content; }
+    .footer-link-item {
+      margin-right: 90px; }
+      .footer-link-item h4 {
+        margin: 20px 0; }
+      .footer-link-item a {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 300;
+        font-size: 14px; }
+      .footer-link-item-logo {
+        width: 360px; }
+      .footer-link-item-address {
+        width: 350px;
+        margin: 10px 0 0 25px;
+        font-size: 14px; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.card-detail {
+  background: white;
+  position: relative; }
+  .card-detail-img img {
+    width: 210px;
+    height: 210px; }
+  .card-detail-sale {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: red;
+    border-radius: 10px;
+    padding: 10px 5px;
+    color: white; }
+  .card-detail-info-price {
+    padding: 10px; }
+    .card-detail-info-price .new {
+      color: red;
+      font-weight: bold; }
+
+.card-detail:hover {
+  box-shadow: var(--hover-shadow); }
+
+.banner {
+  padding-left: 10px; }
+
+.category {
+  background: white; }
+  .category a {
+    padding: 5px 10px;
+    justify-content: left;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 2px 0; }
+    .category a img {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px; }
+  .category a:hover {
+    box-shadow: var(--hover-shadow); }
+
+.category-banner-section {
+  display: grid;
+  grid-template-columns: 270px 870px;
+  height: 400px; }
+  .category-banner-section .category-list {
+    box-shadow: var(--box-shadow);
+    overflow-y: scroll; }
+  .category-banner-section .category-list::-webkit-scrollbar {
+    display: none; }
+
+.feature {
+  background: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--boder-radius); }
+  .feature-item {
+    padding: 5px 10px;
+    grid-gap: 10px;
+    border-right: 1px solid black;
+    position: relative; }
+    .feature-item-icon {
+      font-size: 22px; }
+    .feature-item .tooltip {
+      bottom: -80px;
+      width: 100%; }
+  .feature-item:hover .tooltip, .feature-item:hover {
+    opacity: 1;
+    transition: 0.3s;
+    box-shadow: var(--hover-shadow); }
+  .feature-item:hover .tooltip {
+    background: var(--blue-color); }
+  .feature div:last-child {
+    border-right: 0; }
+
+.product-section {
+  text-align: center;
+  background: white;
+  padding: 25px 20px; }
+  .product-section h1 {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    border-bottom: 3px solid var(--blue-color); }

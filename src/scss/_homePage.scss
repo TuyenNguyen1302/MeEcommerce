@@ -1,0 +1,59 @@
+// DANH MỤC SP + SLIDER BANNER
+.category-banner-section {
+    display: grid;
+    grid-template-columns: 270px 870px;
+    height: 400px;
+    .category-list {
+        box-shadow: var(--box-shadow);
+        overflow-y: scroll;
+    }
+    .category-list::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+//FEATURE
+.feature {
+    background: white;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--boder-radius);
+    &-item {
+        padding: 5px 10px;
+        grid-gap: 10px;
+        border-right: 1px solid black;
+        position: relative;
+        &-icon {
+            font-size: 22px;
+        }
+        .tooltip {
+            bottom: -80px;
+            width: 100%;
+        }
+    }
+    &-item:hover .tooltip,
+    &-item:hover {
+        opacity: 1;
+        transition: 0.3s;
+        box-shadow: var(--hover-shadow);
+    }
+    &-item:hover .tooltip {
+        background: var(--blue-color);
+    }
+    div:last-child {
+        border-right: 0;
+    }
+}
+
+// SLIDER DANH SÁCH CÁC SẢN PHẨM
+.product-section {
+    text-align: center;
+    background: white;
+    padding: 25px 20px;
+    h1{
+        margin: 0 auto;
+        width: fit-content;
+        margin-bottom: 20px;
+        padding: 5px 0;
+        border-bottom: 3px solid var(--blue-color);
+    }
+}
