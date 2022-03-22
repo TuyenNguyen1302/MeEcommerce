@@ -8,7 +8,7 @@
     z-index: 1;
     &-above {
         width: 100%;
-        padding: 5px 60px;
+        padding: 10px 60px;
         justify-content: left;
         &-logo {
             width: 270px;
@@ -26,8 +26,12 @@
                 box-shadow: var(--box-shadow);
                 padding: 10px 15px;
             }
-            button:hover{
+            button:hover {
+                background: var(--blue-color);
                 box-shadow: var(--hover-shadow);
+                i {
+                    color: white;
+                }
             }
         }
         &-link {
@@ -41,7 +45,6 @@
                 grid-gap: 10px;
                 i {
                     font-size: 18px;
-                    transition: 0.2s;
                 }
                 .number {
                     width: fit-content;
@@ -123,8 +126,15 @@
                 width: 100%;
             }
             button {
-                padding: 10px 15px;
                 background: var(--rose-color);
+                box-shadow: var(--box-shadow);
+                color: var(--dark-blue-color);
+                padding: 10px 15px;
+            }
+            button:hover {
+                background: var(--dark-blue-color);
+                color: white;
+                box-shadow: var(--hover-shadow);
             }
         }
         &-icon {
@@ -135,28 +145,34 @@
                 padding: 5px 8px;
                 position: relative;
                 .tooltip {
-                    top: -50px;
+                    top: -60px;
+                }
+                .tooltip::before {
+                    bottom: -8px;
                 }
             }
             .icon:hover .tooltip,
             .icon:hover i {
                 opacity: 1;
                 color: white;
-                transition: 0.3s;
             }
             .face:hover,
+            .face .tooltip::before,
             .face .tooltip {
                 background: #0b84f0;
             }
             .ins:hover,
+            .ins .tooltip::before,
             .ins .tooltip {
                 background: #e60a75;
             }
             .tiktok:hover,
+            .tiktok .tooltip::before,
             .tiktok .tooltip {
                 background: black;
             }
             .ytb:hover,
+            .ytb .tooltip::before,
             .ytb .tooltip {
                 background: #fc0404;
             }
@@ -209,6 +225,7 @@
         border-radius: 10px;
         padding: 10px 5px;
         color: white;
+        font-weight: 300;
     }
     &-info {
         &-price {
@@ -219,32 +236,69 @@
             }
         }
     }
+    &-link {
+        justify-content: center;
+        grid-gap: 15px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        bottom: 33%;
+        transform: translateX(-50%);
+        opacity: 0;
+        a{
+            background: whitesmoke;
+            padding: 5px 10px;
+        }
+    }
+}
+@keyframes zoom {
+    from {
+        transform: scale(1.1);
+        background: var(--background-color);
+    }
+    to {
+        transform: scale(1.3);
+        background: white;
+    }
 }
 .card-detail:hover {
     box-shadow: var(--hover-shadow);
+    .card-detail-link {
+        opacity: 1;
+        a:hover{
+            background: white;
+            animation: zoom 1s infinite;
+            i{
+                color: red;
+            }
+        }
+    }
 }
 
 //BANNER
 .banner {
     padding-left: 10px;
+    &-img {
+        height: 284px;
+    }
 }
 
 //CATEGORY ~ DANH MUC SAN PHAM
-.category {
-    background: white;
+.list-category {
     a {
         padding: 5px 10px;
         justify-content: left;
         font-size: 16px;
         font-weight: 300;
-        margin: 2px 0;
+        transition: 0.1s;
         img {
             width: 25px;
             height: 25px;
             margin-right: 10px;
         }
     }
-    a:hover{
-        box-shadow: var(--hover-shadow);
+    a:hover {
+        box-shadow: var(--box-shadow);
+        font-weight: 700;
     }
 }

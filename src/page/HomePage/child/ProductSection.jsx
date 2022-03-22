@@ -1,4 +1,4 @@
-import ProductCard from "../../../component/ProductCard";
+import ProductCard from '../../../component/ProductCard';
 
 export default function ProductSection(property) {
     let {title} = property;

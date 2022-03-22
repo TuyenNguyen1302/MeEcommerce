@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto"; }
+  font-family: "Roboto";
+  transition: 0.5s; }
 
 :root {
   --gradient-color: linear-gradient(#7787c5dc, #636FA4);
@@ -53,7 +54,7 @@ i {
   overflow: hidden; }
 
 .container {
-  margin: 0 60px 30px 60px; }
+  margin: 20px 60px; }
 
 .middle {
   display: flex;
@@ -67,7 +68,17 @@ i {
   padding: 10px 18px;
   font-weight: 500;
   opacity: 0;
-  color: white; }
+  color: white;
+  overflow: unset; }
+
+.tooltip::before,
+.category-list::before {
+  position: absolute;
+  content: '';
+  height: 15px;
+  width: 15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); }
 
 .header {
   flex-direction: column;
@@ -78,7 +89,7 @@ i {
   z-index: 1; }
   .header-above {
     width: 100%;
-    padding: 5px 60px;
+    padding: 10px 60px;
     justify-content: left; }
     .header-above-logo {
       width: 270px;
@@ -94,7 +105,10 @@ i {
         box-shadow: var(--box-shadow);
         padding: 10px 15px; }
       .header-above-search button:hover {
+        background: var(--blue-color);
         box-shadow: var(--hover-shadow); }
+        .header-above-search button:hover i {
+          color: white; }
     .header-above-link {
       margin: 0 auto;
       margin-right: 0;
@@ -104,8 +118,7 @@ i {
       .header-above-link-item {
         grid-gap: 10px; }
         .header-above-link-item i {
-          font-size: 18px;
-          transition: 0.2s; }
+          font-size: 18px; }
         .header-above-link-item .number {
           width: fit-content;
           padding: 3px 10px;
@@ -166,8 +179,14 @@ i {
       .footer-signup-input input {
         width: 100%; }
       .footer-signup-input button {
-        padding: 10px 15px;
-        background: var(--rose-color); }
+        background: var(--rose-color);
+        box-shadow: var(--box-shadow);
+        color: var(--dark-blue-color);
+        padding: 10px 15px; }
+      .footer-signup-input button:hover {
+        background: var(--dark-blue-color);
+        color: white;
+        box-shadow: var(--hover-shadow); }
     .footer-signup-icon {
       grid-gap: 30px; }
       .footer-signup-icon .icon {
@@ -176,22 +195,27 @@ i {
         padding: 5px 8px;
         position: relative; }
         .footer-signup-icon .icon .tooltip {
-          top: -50px; }
+          top: -60px; }
+        .footer-signup-icon .icon .tooltip::before {
+          bottom: -8px; }
       .footer-signup-icon .icon:hover .tooltip,
       .footer-signup-icon .icon:hover i {
         opacity: 1;
-        color: white;
-        transition: 0.3s; }
+        color: white; }
       .footer-signup-icon .face:hover,
+      .footer-signup-icon .face .tooltip::before,
       .footer-signup-icon .face .tooltip {
         background: #0b84f0; }
       .footer-signup-icon .ins:hover,
+      .footer-signup-icon .ins .tooltip::before,
       .footer-signup-icon .ins .tooltip {
         background: #e60a75; }
       .footer-signup-icon .tiktok:hover,
+      .footer-signup-icon .tiktok .tooltip::before,
       .footer-signup-icon .tiktok .tooltip {
         background: black; }
       .footer-signup-icon .ytb:hover,
+      .footer-signup-icon .ytb .tooltip::before,
       .footer-signup-icon .ytb .tooltip {
         background: #fc0404; }
   .footer .middle {
@@ -228,66 +252,105 @@ i {
     background: red;
     border-radius: 10px;
     padding: 10px 5px;
-    color: white; }
+    color: white;
+    font-weight: 300; }
   .card-detail-info-price {
     padding: 10px; }
     .card-detail-info-price .new {
       color: red;
       font-weight: bold; }
+  .card-detail-link {
+    justify-content: center;
+    grid-gap: 15px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 33%;
+    transform: translateX(-50%);
+    opacity: 0; }
+    .card-detail-link a {
+      background: whitesmoke;
+      padding: 5px 10px; }
+
+@keyframes zoom {
+  from {
+    transform: scale(1.1);
+    background: var(--background-color); }
+  to {
+    transform: scale(1.3);
+    background: white; } }
 
 .card-detail:hover {
   box-shadow: var(--hover-shadow); }
+  .card-detail:hover .card-detail-link {
+    opacity: 1; }
+    .card-detail:hover .card-detail-link a:hover {
+      background: white;
+      animation: zoom 1s infinite; }
+      .card-detail:hover .card-detail-link a:hover i {
+        color: red; }
 
 .banner {
   padding-left: 10px; }
+  .banner-img {
+    height: 284px; }
 
-.category {
-  background: white; }
-  .category a {
-    padding: 5px 10px;
-    justify-content: left;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 2px 0; }
-    .category a img {
-      width: 25px;
-      height: 25px;
-      margin-right: 10px; }
-  .category a:hover {
-    box-shadow: var(--hover-shadow); }
+.list-category a {
+  padding: 5px 10px;
+  justify-content: left;
+  font-size: 16px;
+  font-weight: 300;
+  transition: 0.1s; }
+  .list-category a img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px; }
+
+.list-category a:hover {
+  box-shadow: var(--box-shadow);
+  font-weight: 700; }
 
 .category-banner-section {
   display: grid;
   grid-template-columns: 270px 870px;
-  height: 400px; }
+  height: 285px;
+  position: relative; }
   .category-banner-section .category-list {
+    background: white;
     box-shadow: var(--box-shadow);
     overflow-y: scroll; }
   .category-banner-section .category-list::-webkit-scrollbar {
     display: none; }
+  .category-banner-section .category-list::before {
+    background: white;
+    border-left: 0.5px solid var(--blue-color);
+    border-top: 0.5px solid var(--blue-color);
+    left: 5%;
+    top: -8px; }
 
 .feature {
   background: white;
   box-shadow: var(--box-shadow);
   border-radius: var(--boder-radius); }
   .feature-item {
-    padding: 5px 10px;
+    padding: 10px 0;
     grid-gap: 10px;
-    border-right: 1px solid black;
+    width: 100%;
+    justify-content: center;
     position: relative; }
     .feature-item-icon {
       font-size: 22px; }
     .feature-item .tooltip {
       bottom: -80px;
       width: 100%; }
+    .feature-item .tooltip::before {
+      top: -8px; }
   .feature-item:hover .tooltip, .feature-item:hover {
     opacity: 1;
-    transition: 0.3s;
     box-shadow: var(--hover-shadow); }
-  .feature-item:hover .tooltip {
+  .feature-item:hover .tooltip,
+  .feature-item:hover .tooltip::before {
     background: var(--blue-color); }
-  .feature div:last-child {
-    border-right: 0; }
 
 .product-section {
   text-align: center;

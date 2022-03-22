@@ -17,6 +17,10 @@ export default function ProductCard() {
                     <span className="new"><big>2.199.000 ₫</big></span>
                 </div>
             </div>
+            <div className="card-detail-link middle">
+                <a href="" className="middle border"><i className="fa-solid fa-heart"></i></a>
+                <a href="" className="middle border"><i className="fa-solid fa-cart-shopping"></i></a>
+            </div>
         </div>
 
     );
