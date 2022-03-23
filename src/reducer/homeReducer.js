@@ -1,26 +1,26 @@
 import { constant } from '../constant';
 
 const initialState = {
-    listCategory: {
+    homeInfo: {
         status: 'LOADING',
-    },
-};
-export function categoryReducer (state = initialState, action) {
-    switch (action.type){
-        case constant.GET_CATEGORY_SUCCESS: {
+    }
+}
+export function homeReducer (state = initialState, action) {
+    switch (action.type) {
+        case constant.GET_HOME_SUCCESS: {
             return {
                 ...state,
-                listCategory: {
+                homeInfo: {
                     status: constant.SUCCESS,
                     data: action.data,
                 },
             };
         }
 
-        case constant.GET_CATEGORY_FAILURE: {
+        case constant.GET_HOME_FAILURE: {
             return {
                 ...state,
-                listCategory: {
+                homeInfo: {
                     status: constant.FAILURE,
                     data: [],
                 },

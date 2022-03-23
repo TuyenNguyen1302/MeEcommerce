@@ -1,4 +1,9 @@
+import ListCategory from "./ListCategory";
+
 export default function Header() {
+    const onToggleClick = () => {
+        document.querySelector('.category').classList.toggle('show');
+    };
     return (
         <div className="header middle">
             <div className="header-above middle">
@@ -36,11 +41,17 @@ export default function Header() {
                 </div>
             </div>
             <div className="header-nav middle">
-                <a href="" className="header-nav-type middle">
+                <button className="header-nav-dropdown middle"
+                    onClick={onToggleClick}>
                     Danh mục sản phẩm
                     <i className="fa-solid fa-bars"></i>
-                </a>
-                <div className="header-nav-dropdown">
+                </button>
+                <div className="dropdown-category">
+                    <div className="category" hidden>
+                        <ListCategory></ListCategory>
+                    </div>
+                </div>
+                <div className="header-nav-link">
                     <a href="#">Trang chủ</a>
                     <a href="#">Sản phẩm</a>
                     <a href="#">Tin tức</a>

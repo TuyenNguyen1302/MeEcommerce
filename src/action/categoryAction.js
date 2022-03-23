@@ -3,11 +3,11 @@ import { categoryService } from '../service/categoryService';
 
 function getListCategory() {
     return (dispatch) => {
-        categoryService.getListCategory().then((res) => {
-            if (res.status === constant.SUCCESS) {
-                dispatch(getCategorySuccess(res.data)); // bien dispatch -> nhan loi goi tu action -> lay data tu action -> tra ve store ~ reducer
+        categoryService.getListCategory().then((response) => {
+            if (response.status === constant.SUCCESS) {
+                dispatch(getCategorySuccess(response.data)); // bien dispatch -> nhan loi goi tu action -> lay data tu action -> tra ve store ~ reducer
             } else {
-                dispatch(getCategoryFailure(res.msg));
+                dispatch(getCategoryFailure(response.msg));
             }
         });
     };

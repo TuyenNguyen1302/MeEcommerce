@@ -4,20 +4,21 @@
     grid-template-columns: 270px 870px;
     height: 285px;
     position: relative;
-    .category-list {
-        background: white;
-        box-shadow: var(--box-shadow);
+    .categories {
         overflow-y: scroll;
     }
-    .category-list::-webkit-scrollbar {
+    .categories::-webkit-scrollbar {
         display: none;
     }
-    .category-list::before{
+    .categories::before {
         background: white;
         border-left: 0.5px solid var(--blue-color);
         border-top: 0.5px solid var(--blue-color);
         left: 5%;
         top: -8px;
+    }
+    .banner-slider {
+        margin-left: 10px;
     }
 }
 
@@ -39,7 +40,7 @@
             bottom: -80px;
             width: 100%;
         }
-        .tooltip::before{
+        .tooltip::before {
             top: -8px;
         }
     }
@@ -59,11 +60,15 @@
     text-align: center;
     background: white;
     padding: 25px 20px;
-    h1{
+    h1 {
         margin: 0 auto;
         width: fit-content;
         margin-bottom: 20px;
         padding: 5px 0;
         border-bottom: 3px solid var(--blue-color);
+    }
+    .list-card{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
     }
 }

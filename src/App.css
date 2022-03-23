@@ -72,7 +72,7 @@ i {
   overflow: unset; }
 
 .tooltip::before,
-.category-list::before {
+.categories::before {
   position: absolute;
   content: '';
   height: 15px;
@@ -140,21 +140,42 @@ i {
     width: 100%;
     padding: 0 60px;
     justify-content: left;
-    grid-gap: 10px; }
-    .header-nav-type {
+    grid-gap: 10px;
+    position: relative; }
+    .header-nav-dropdown {
       width: 270px;
       background: var(--rose-color);
       box-shadow: var(--box-shadow);
-      padding: 10px; }
-    .header-nav-dropdown {
+      padding: 10px;
+      font-size: 18px; }
+    .header-nav-dropdown i:hover {
+      transform: rotateZ(90deg); }
+    .header-nav .dropdown-category {
+      position: absolute;
+      top: 100%;
+      width: 271px; }
+      .header-nav .dropdown-category .show {
+        opacity: 1;
+        display: block;
+        border-right: 1px solid var(--blue-color);
+        border-left: 1px solid var(--blue-color);
+        border-bottom: 1px solid var(--blue-color);
+        animation: animation 0.5s ease forwards; }
+
+@keyframes animation {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0%); } }
+    .header-nav-link {
       height: 100%; }
-      .header-nav-dropdown a {
+      .header-nav-link a {
         color: white;
         margin-right: 20px;
         padding: 7px 0; }
-      .header-nav-dropdown a:hover {
+      .header-nav-link a:hover {
         border-bottom: 3px solid var(--rose-color); }
-      .header-nav-dropdown i {
+      .header-nav-link i {
         margin-left: 5px; }
 
 .footer {
@@ -241,7 +262,9 @@ i {
 
 .card-detail {
   background: white;
-  position: relative; }
+  position: relative;
+  width: 200px;
+  height: 285px; }
   .card-detail-img img {
     width: 210px;
     height: 210px; }
@@ -254,8 +277,16 @@ i {
     padding: 10px 5px;
     color: white;
     font-weight: 300; }
-  .card-detail-info-price {
-    padding: 10px; }
+  .card-detail-info {
+    padding: 5px; }
+    .card-detail-info-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; }
+    .card-detail-info-price .old {
+      font-size: 14px; }
     .card-detail-info-price .new {
       color: red;
       font-weight: bold; }
@@ -290,43 +321,43 @@ i {
       .card-detail:hover .card-detail-link a:hover i {
         color: red; }
 
-.banner {
-  padding-left: 10px; }
-  .banner-img {
-    height: 284px; }
+.banner-img {
+  height: 285px; }
 
-.list-category a {
-  padding: 5px 10px;
-  justify-content: left;
-  font-size: 16px;
-  font-weight: 300;
-  transition: 0.1s; }
-  .list-category a img {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px; }
-
-.list-category a:hover {
-  box-shadow: var(--box-shadow);
-  font-weight: 700; }
+.list-category {
+  background: white;
+  box-shadow: var(--box-shadow); }
+  .list-category a {
+    padding: 5px 10px;
+    justify-content: left;
+    font-size: 16px;
+    font-weight: 300;
+    transition: 0.1s; }
+    .list-category a img {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px; }
+  .list-category a:hover {
+    box-shadow: var(--box-shadow);
+    font-weight: 700; }
 
 .category-banner-section {
   display: grid;
   grid-template-columns: 270px 870px;
   height: 285px;
   position: relative; }
-  .category-banner-section .category-list {
-    background: white;
-    box-shadow: var(--box-shadow);
+  .category-banner-section .categories {
     overflow-y: scroll; }
-  .category-banner-section .category-list::-webkit-scrollbar {
+  .category-banner-section .categories::-webkit-scrollbar {
     display: none; }
-  .category-banner-section .category-list::before {
+  .category-banner-section .categories::before {
     background: white;
     border-left: 0.5px solid var(--blue-color);
     border-top: 0.5px solid var(--blue-color);
     left: 5%;
     top: -8px; }
+  .category-banner-section .banner-slider {
+    margin-left: 10px; }
 
 .feature {
   background: white;
@@ -362,3 +393,6 @@ i {
     margin-bottom: 20px;
     padding: 5px 0;
     border-bottom: 3px solid var(--blue-color); }
+  .product-section .list-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); }
