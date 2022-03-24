@@ -53,7 +53,7 @@ export default function HomePage() {
                 </div>
 
                 {(!homeInfo.data ? <div></div> :
-                    <div className="hot-products">
+                    <div>
                         <ProductSection title="Sản phẩm nổi bật"
                             listProduct={homeInfo.data.hot_products}></ProductSection>
                     </div>

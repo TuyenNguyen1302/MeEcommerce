@@ -263,10 +263,9 @@ i {
 .card-detail {
   background: white;
   position: relative;
-  width: 200px;
-  height: 285px; }
+  height: 285px;
+  width: 210px; }
   .card-detail-img img {
-    width: 210px;
     height: 210px; }
   .card-detail-sale {
     position: absolute;
@@ -285,11 +284,15 @@ i {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2; }
-    .card-detail-info-price .old {
-      font-size: 14px; }
-    .card-detail-info-price .new {
-      color: red;
-      font-weight: bold; }
+    .card-detail-info-price {
+      position: absolute;
+      width: 96%;
+      bottom: 0px; }
+      .card-detail-info-price .old {
+        font-size: 14px; }
+      .card-detail-info-price .new {
+        color: red;
+        font-weight: bold; }
   .card-detail-link {
     justify-content: center;
     grid-gap: 15px;

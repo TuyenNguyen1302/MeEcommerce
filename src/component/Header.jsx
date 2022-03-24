@@ -1,7 +1,7 @@
 import ListCategory from "./ListCategory";
 
 export default function Header() {
-    const onToggleClick = () => {
+    function onToggleClick() {
         document.querySelector('.category').classList.toggle('show');
     };
     return (
