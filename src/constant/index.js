@@ -9,4 +9,7 @@ export const constant = {
     // Home
     GET_HOME_SUCCESS: 'GET_HOME_SUCCESS',
     GET_HOME_FAILURE: 'GET_HOME_FAILURE',
+    // List product
+    GET_PRODUCT_SUCCESS: 'GET_PRODUCT_SUCCESS',
+    GET_PRODUCT_FAILURE: 'GET_PRODUCT_FAILURE',
 };

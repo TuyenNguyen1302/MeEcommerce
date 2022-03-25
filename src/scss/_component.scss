@@ -5,7 +5,7 @@
     font-weight: 500;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 9;
     &-above {
         width: 100%;
         padding: 10px 60px;
@@ -236,6 +236,7 @@
 
 //PRODUCT CARD DETAIL
 .card-detail {
+    text-align: center;
     background: white;
     position: relative;
     height: 285px;
@@ -267,7 +268,7 @@
         &-price {
             position: absolute;
             width: 96%;
-            bottom: 0px;
+            bottom: 3px;
             .old{
                 font-size: 14px;
             }
@@ -283,12 +284,16 @@
         width: 100%;
         position: absolute;
         left: 50%;
-        bottom: 33%;
+        bottom: 25%;
         transform: translateX(-50%);
         opacity: 0;
         a {
-            background: whitesmoke;
+            background: var(--gradient-color);
+            box-shadow: var(--hover-shadow);
             padding: 5px 10px;
+            i{
+                color: white;
+            }
         }
     }
 }

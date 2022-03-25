@@ -1,0 +1,85 @@
+.list-product-section {
+    display: grid;
+    grid-template-columns: 270px auto;
+    height: fit-content;
+    margin-right: 15px;
+    .section-category {
+        height: fit-content;
+        h3 {
+            padding: 10px;
+            background: var(--dark-blue-color);
+            color: white;
+        }
+    }
+    .section-product {
+        cursor: pointer;
+        .sort-by {
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 20px;
+            position: relative;
+            &-select {
+                background: var(--dark-blue-color);
+                h3,
+                i {
+                    color: white;
+                }
+                grid-gap: 113px;
+                padding: 5px 10px;
+            }
+            &-option {
+                position: absolute;
+                top: 103%;
+                z-index: 1;
+                &-item {
+                    padding: 5px 106px 5px 10px;
+                    background: white;
+                    line-height: 30px;
+                }
+                &-item div:hover {
+                    transform: scale(1.1);
+                    font-weight: 500;
+                    color: var(--dark-blue-color);
+                }
+                .show {
+                    display: block;
+                    animation: topbottom 0.5s ease forwards;
+                }
+            }
+        }
+
+        @keyframes topbottom {
+            0% {
+                transform: translateY(-30%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+        .products {
+            padding: 10px 5px;
+            margin-left: 10px;
+            background: transparent;
+            box-shadow: none;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 30px;
+        }
+        &-page {
+            justify-content: flex-end;
+            padding-right: 20px;
+            grid-gap: 20px;
+            font-weight: 700;
+            margin: 10px 0 30px 0;
+            a {
+                background: white;
+                padding: 5px 15px;
+            }
+            a:first-child {
+                background: var(--dark-blue-color);
+                color: white;
+            }
+        }
+    }
+}
