@@ -92,3 +92,27 @@ i{
 	left: 50%;
 	transform: translateX(-50%) rotate(45deg);
 }
+
+.left-btn, .right-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    i{
+        font-size: 40px;
+    }
+    &:hover i{
+        color: var(--rose-color)
+    }
+}
+.left-btn {
+    left: 0;
+}
+.right-btn {
+    right: 0;
+}
+
+.slick-dots{
+    position: absolute;
+    bottom: 0;
+}

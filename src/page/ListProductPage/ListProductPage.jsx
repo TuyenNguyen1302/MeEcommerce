@@ -54,7 +54,7 @@ export default function ListProductPage() {
                             <i className="fa-solid fa-caret-down"></i>
                         </div>
                         <div className="sort-by-option">
-                            <div className="sort-by-option-item border" hidden>
+                            <div className="sort-by-option-item border">
                                 <div>
                                     Giá tăng dần
                                 </div>

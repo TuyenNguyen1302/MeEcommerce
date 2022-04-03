@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Slider from 'react-slick/lib/slider';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../component/Header';
 import Banner from '../../component/Banner';
@@ -7,10 +8,25 @@ import Footer from '../../component/Footer';
 import { constant } from '../../constant';
 import { homeAction } from '../../action/homeAction';
 import CategoryCard from '../../component/CategoryCard';
+import LeftButton from '../../component/LeftButton';
+import RightButton from '../../component/RightButton';
 
 export default function HomePage() {
     const dispatch = useDispatch();
     const homeInfo = useSelector(store => store.homeReducer.homeInfo);
+
+    var setting = {
+        infinite: true, //lặp lại 
+        slidesToShow: 1, // ptu show ra
+        slidesToScroll: 1, // scroll 1 lần 1 ảnh
+        dots: true, // dot dưới ptu
+        dotsClass: "slick-dots slick-thumb", //kiểu nút dots
+        autoplay: true, // tự động scroll
+        autoplaySpeed: 5000, //tốc độ 5s qua 1 ảnh
+        nextArrow: <RightButton/>,
+        prevArrow: <LeftButton/>,
+    }
+
     useEffect(() => {
         if (homeInfo.status === constant.LOADING) {
             dispatch(homeAction.getHomeInfo());
@@ -31,17 +47,18 @@ export default function HomePage() {
         );
     }
     function Banners() {
-        function createBanner(banners) {
-            console.log(banners);
-            return banners.map((item) => (
+        function createBanner(data) {
+            console.log(data);
+            return data.map((item) => (
                 <Banner key={item._id} image={item.image} id={item._id}></Banner>
             ));
         }
         return (!homeInfo.data ? <div></div> :
-            <div className="banner-slider border middle">
-                {createBanner(homeInfo.data.banners)}
-            </div>
-        );
+            <div className="banner-slider border">
+                <Slider {...setting}>
+                    {createBanner(homeInfo.data.banners)}
+                </Slider>
+            </div>);
     }
     return (
         <div>

@@ -2,7 +2,7 @@ import ListCategory from "./ListCategory";
 
 export default function Header() {
     function onToggleClick() {
-        document.querySelector('.category').classList.toggle('show');
+        document.querySelector('.dropdown-category').classList.toggle('show');
     };
     return (
         <div className="header middle">
@@ -47,9 +47,7 @@ export default function Header() {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <div className="dropdown-category">
-                    <div className="category" hidden>
-                        <ListCategory></ListCategory>
-                    </div>
+                    <ListCategory></ListCategory>
                 </div>
                 <div className="header-nav-link">
                     <a href="#">Trang chủ</a>
