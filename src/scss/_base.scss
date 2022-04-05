@@ -5,14 +5,16 @@
     font-family: "Roboto";
     transition: 0.5s;
 }
+
 :root {
-    --gradient-color: linear-gradient(#7787c5dc, #636FA4);
-    --blue-color: #636FA4;
+    --gradient-color: linear-gradient(#7787c5dc, #636fa4);
+    --blue-color: #636fa4;
     --dark-blue-color: #4d536e;
-    --rose-color: #E8CBC0;
+    --rose-color: #e8cbc0;
     --background-color: #acbdce3f;
+    --background-popup: #acbdceb3;
     --box-shadow: 0px 0px 3px var(--blue-color);
-    --hover-shadow: 0px 0px 8px #4d536e;
+    --hover-shadow: 0px 0px 8px #7d7f87;
     --boder-radius: 5px;
 }
 
@@ -41,6 +43,11 @@ input {
     padding: 5px 10px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -52,11 +59,11 @@ a {
     text-decoration: none;
 }
 
-i{
+i {
     color: var(--dark-blue-color);
 }
 
-.border{
+.border {
     box-shadow: var(--box-shadow);
     border-radius: var(--boder-radius);
     overflow: hidden;
@@ -85,34 +92,37 @@ i{
 
 .tooltip::before,
 .categories::before {
-	position: absolute;
-	content: '';
-	height: 15px;
-	width: 15px;
-	left: 50%;
-	transform: translateX(-50%) rotate(45deg);
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
 }
 
-.left-btn, .right-btn {
+.left-btn,
+.right-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
-    i{
+    i {
         font-size: 40px;
     }
-    &:hover i{
-        color: var(--rose-color)
+    &:hover i {
+        color: var(--rose-color);
     }
 }
+
 .left-btn {
     left: 0;
 }
+
 .right-btn {
     right: 0;
 }
 
-.slick-dots{
+.slick-dots {
     position: absolute;
     bottom: 0;
 }

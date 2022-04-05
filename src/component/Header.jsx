@@ -50,8 +50,8 @@ export default function Header() {
                     <ListCategory></ListCategory>
                 </div>
                 <div className="header-nav-link">
-                    <a href="#">Trang chủ</a>
-                    <a href="#">Sản phẩm</a>
+                    <a href="/home">Trang chủ</a>
+                    <a href="/product">Sản phẩm</a>
                     <a href="#">Tin tức</a>
                     <a href="#">Khuyến mãi</a>
                 </div>

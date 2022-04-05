@@ -6,13 +6,14 @@
   transition: 0.5s; }
 
 :root {
-  --gradient-color: linear-gradient(#7787c5dc, #636FA4);
-  --blue-color: #636FA4;
+  --gradient-color: linear-gradient(#7787c5dc, #636fa4);
+  --blue-color: #636fa4;
   --dark-blue-color: #4d536e;
-  --rose-color: #E8CBC0;
+  --rose-color: #e8cbc0;
   --background-color: #acbdce3f;
+  --background-popup: #acbdceb3;
   --box-shadow: 0px 0px 3px var(--blue-color);
-  --hover-shadow: 0px 0px 8px #4d536e;
+  --hover-shadow: 0px 0px 8px #7d7f87;
   --boder-radius: 5px; }
 
 body {
@@ -35,6 +36,10 @@ a {
 
 input {
   padding: 5px 10px; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; }
 
 img {
   width: 100%;
@@ -74,20 +79,23 @@ i {
 .tooltip::before,
 .categories::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 15px;
   width: 15px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg); }
 
-.left-btn, .right-btn {
+.left-btn,
+.right-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 3; }
-  .left-btn i, .right-btn i {
+  .left-btn i,
+  .right-btn i {
     font-size: 40px; }
-  .left-btn:hover i, .right-btn:hover i {
+  .left-btn:hover i,
+  .right-btn:hover i {
     color: var(--rose-color); }
 
 .left-btn {
@@ -413,7 +421,7 @@ i {
     .feature-item-icon {
       font-size: 22px; }
     .feature-item .tooltip {
-      bottom: -80px;
+      bottom: -75px;
       width: 100%; }
     .feature-item .tooltip::before {
       top: -8px; }
@@ -426,7 +434,7 @@ i {
 
 .product-section {
   background: white;
-  padding: 25px 5px; }
+  padding: 25px 5px 25px 3px; }
   .product-section h1 {
     margin: 0 auto;
     width: fit-content;
@@ -507,3 +515,92 @@ i {
       .list-product-section .section-product-page a:first-child {
         background: var(--dark-blue-color);
         color: white; }
+
+.main-info {
+  display: grid;
+  grid-template-columns: 415px auto;
+  background: white; }
+  .main-info-image {
+    padding: 10px;
+    border-right: 2px solid var(--background-color); }
+  .main-info-product {
+    padding: 10px 20px; }
+    .main-info-product-rating {
+      margin: 10px 0; }
+      .main-info-product-rating i {
+        color: #fdd836; }
+    .main-info-product .line {
+      margin: 15px 0;
+      width: 50px;
+      height: 2px;
+      background: var(--blue-color); }
+    .main-info-product-price {
+      margin: 10px 0 35px 0; }
+      .main-info-product-price big {
+        font-size: 35px;
+        font-weight: 900;
+        color: red; }
+      .main-info-product-price .sale {
+        background: red;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 5px;
+        margin-left: 10px; }
+    .main-info-product-action {
+      justify-content: start;
+      grid-gap: 20px;
+      margin: 20px 0;
+      border-top: 2px solid var(--background-color);
+      border-bottom: 2px solid var(--background-color);
+      padding: 20px 0; }
+      .main-info-product-action .middle {
+        width: 120px; }
+        .main-info-product-action .middle input {
+          text-align: center;
+          width: 100%;
+          background: white; }
+        .main-info-product-action .middle button {
+          background: var(--background-color);
+          padding: 8px 0;
+          width: 100%;
+          height: 100%; }
+          .main-info-product-action .middle button:first-of-type {
+            border-right: 2px solid var(--background-color); }
+          .main-info-product-action .middle button:last-of-type {
+            border-left: 2px solid var(--background-color); }
+      .main-info-product-action .add-cart {
+        background: var(--blue-color);
+        width: fit-content;
+        padding: 10px 50px; }
+        .main-info-product-action .add-cart button {
+          color: white; }
+
+.detail-info {
+  background: white;
+  padding: 20px; }
+  .detail-info h2 {
+    margin-bottom: 20px; }
+  .detail-info .detail-col {
+    display: grid;
+    grid-template-columns: 200px auto; }
+    .detail-info .detail-col .title {
+      background: var(--background-color);
+      padding: 10px 20px;
+      font-weight: 500; }
+    .detail-info .detail-col .des {
+      padding-left: 10px; }
+
+.desc-info {
+  background: white;
+  padding: 20px; }
+  .desc-info .middle {
+    margin-bottom: 15px;
+    justify-content: start;
+    grid-gap: 30px;
+    border-bottom: 2px solid var(--background-color); }
+    .desc-info .middle h3 {
+      padding-bottom: 10px;
+      cursor: pointer; }
+    .desc-info .middle .tab-active {
+      color: var(--blue-color);
+      border-bottom: 2px solid var(--blue-color); }

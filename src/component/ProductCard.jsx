@@ -6,11 +6,16 @@ export default function ProductCard(property) {
     function salePercent(before, after) {
         return (Math.floor((after - before) / before * 100));
     };
+    function moveInfoProduct(id){
+        // doi duong dan = lay ten mien
+        window.location.href = window.location.origin + '/product/' + id;
+    }
     return (
-        <div className="card-detail border">
-            <a href="" className="card-detail-img">
+        // arrow funct => tranh chay vo han vs func co bien
+        <div className="card-detail border" onClick={() => moveInfoProduct(id)}> 
+            <div className="card-detail-img">
                 <img src={images} alt="" />
-            </a>
+            </div>
             {before_discount_price !== after_discount_price ?
                 <div className="card-detail-sale">
                     <span>{salePercent(before_discount_price, after_discount_price)} %</span>

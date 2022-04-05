@@ -40,7 +40,7 @@
             font-size: 22px;
         }
         .tooltip {
-            bottom: -80px;
+            bottom: -75px;
             width: 100%;
         }
         .tooltip::before {
@@ -61,7 +61,7 @@
 // SLIDER DANH SÁCH CÁC SẢN PHẨM
 .product-section {
     background: white;
-    padding: 25px 5px;
+    padding: 25px 5px 25px 3px;
     h1 {
         margin: 0 auto;
         width: fit-content;
