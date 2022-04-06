@@ -303,7 +303,8 @@ i {
   position: relative;
   height: 285px;
   width: 210px;
-  margin: 10px; }
+  margin: 10px;
+  cursor: pointer; }
   .card-detail-img img {
     height: 210px; }
   .card-detail-sale {
@@ -522,7 +523,8 @@ i {
   background: white; }
   .main-info-image {
     padding: 10px;
-    border-right: 2px solid var(--background-color); }
+    border-right: 2px solid var(--background-color);
+    height: 415px; }
   .main-info-product {
     padding: 10px 20px; }
     .main-info-product-rating {
@@ -546,34 +548,42 @@ i {
         padding: 3px 10px;
         border-radius: 5px;
         margin-left: 10px; }
-    .main-info-product-action {
+    .main-info-product-quality {
       justify-content: start;
       grid-gap: 20px;
       margin: 20px 0;
       border-top: 2px solid var(--background-color);
       border-bottom: 2px solid var(--background-color);
       padding: 20px 0; }
-      .main-info-product-action .middle {
-        width: 120px; }
-        .main-info-product-action .middle input {
+      .main-info-product-quality h3 {
+        margin-top: -10px;
+        margin-bottom: 10px; }
+      .main-info-product-quality .middle {
+        width: 150px; }
+        .main-info-product-quality .middle input {
           text-align: center;
           width: 100%;
           background: white; }
-        .main-info-product-action .middle button {
+        .main-info-product-quality .middle button {
           background: var(--background-color);
-          padding: 8px 0;
-          width: 100%;
-          height: 100%; }
-          .main-info-product-action .middle button:first-of-type {
+          padding: 8px 15px; }
+          .main-info-product-quality .middle button:first-of-type {
             border-right: 2px solid var(--background-color); }
-          .main-info-product-action .middle button:last-of-type {
+          .main-info-product-quality .middle button:last-of-type {
             border-left: 2px solid var(--background-color); }
-      .main-info-product-action .add-cart {
+          .main-info-product-quality .middle button:hover {
+            background: var(--blue-color);
+            color: white; }
+    .main-info-product-action {
+      justify-content: start;
+      grid-gap: 20px; }
+      .main-info-product-action button {
         background: var(--blue-color);
-        width: fit-content;
-        padding: 10px 50px; }
-        .main-info-product-action .add-cart button {
-          color: white; }
+        padding: 10px 50px;
+        color: white; }
+        .main-info-product-action button:hover {
+          background: var(--rose-color);
+          color: black; }
 
 .detail-info {
   background: white;
@@ -588,7 +598,8 @@ i {
       padding: 10px 20px;
       font-weight: 500; }
     .detail-info .detail-col .des {
-      padding-left: 10px; }
+      padding: 10px 20px;
+      background: #acbdce16; }
 
 .desc-info {
   background: white;

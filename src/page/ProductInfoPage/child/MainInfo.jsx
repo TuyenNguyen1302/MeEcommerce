@@ -32,15 +32,17 @@ export default function MainInfo(property) {
                         <span className="sale">{salePercent(before_discount_price, after_discount_price)} %</span>
                         : <div />}
                 </div>
-                <div className="main-info-product-action middle">
+                <div className="main-info-product-quality">
+                    <h3>Số lượng</h3>
                     <div className="middle border">
                         <button>-</button>
                         <input type="number" value="1" />
                         <button>+</button>
                     </div>
-                    <div className="add-cart border">
-                        <button>Thêm vào giỏ hàng</button>
-                    </div>
+                </div>
+                <div className="main-info-product-action middle">
+                    <button className="border">Thêm vào yêu thích</button>
+                    <button className="border">Thêm vào giỏ hàng</button>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ export default function DescInfo(property) {
         if (tabName === "desc") {
             return (
                 <div className="middle">
-                    <h3 className="tab-active" onClick={changeTab}>Mô tả sản phẩm</h3>
+                    <h3 className="tab-active">Mô tả sản phẩm</h3>
                     <h3 onClick={changeTab}>Đánh giá sản phẩm</h3>
                 </div>
             )
@@ -23,7 +23,7 @@ export default function DescInfo(property) {
             return (
                 <div className="middle">
                     <h3 onClick={changeTab}>Mô tả sản phẩm</h3>
-                    <h3 className="tab-active" onClick={changeTab}>Đánh giá sản phẩm</h3>
+                    <h3 className="tab-active">Đánh giá sản phẩm</h3>
                 </div>
             )
         }
