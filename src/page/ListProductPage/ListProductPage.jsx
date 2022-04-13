@@ -6,13 +6,16 @@ import ListCategory from '../../component/ListCategory';
 import ProductCard from '../../component/ProductCard';
 import { constant } from '../../constant';
 import { productAction } from '../../action/productAction';
+import NumberPage from './child/NumberPage';
+import { useSearchParams } from 'react-router-dom';
 
 export default function ListProductPage() {
     const dispatch = useDispatch();
     const listProduct = useSelector(store => store.productReducer.listProduct);
+    const [searchParams] = useSearchParams(1);
     useEffect(() => {
         if (listProduct.status === constant.LOADING) {
-            dispatch(productAction.getListProduct());
+            dispatch(productAction.getListProduct(searchParams.toString()));
         }
     })
     function ListProduct() {
@@ -30,7 +33,7 @@ export default function ListProductPage() {
             ))
         }
         return (!listProduct.data ? <div></div> :
-            <div className="products border">
+            <div className="products">
                 {createProduct(listProduct.data)}
             </div>
         );
@@ -65,11 +68,7 @@ export default function ListProductPage() {
                         </div>
                     </div>
                     {ListProduct()}
-                    <div className="section-product-page middle">
-                        <a href="" className="border">1</a>
-                        <a href="" className="border">2</a>
-                        <a href="" className="border">3</a>
-                    </div>
+                    <NumberPage totalPage={listProduct.total_page}></NumberPage>
                 </div>
             </div>
             <Footer></Footer>

@@ -1,19 +1,19 @@
 import { constant } from '../constant';
 import { productService } from '../service/productService';
 
-function getListProduct() {
+function getListProduct(page) {
     return (dispatch) => {
-        productService.getListProduct().then((response) => {
+        productService.getListProduct(page).then((response) => {
             if (response.status === constant.SUCCESS) {
-                dispatch(getProductSuccess(response.data));
+                dispatch(getProductSuccess(response.data, response.total_page));
             } else {
                 dispatch(getProductFailure(response.msg));
             }
         });
     };
 
-    function getProductSuccess(data) {
-        return { type: constant.GET_PRODUCT_SUCCESS, data };
+    function getProductSuccess(data, total_page) {
+        return { type: constant.GET_PRODUCT_SUCCESS, data, total_page };
     }
     function getProductFailure(msg) {
         return { type: constant.GET_PRODUCT_FAILURE, msg };

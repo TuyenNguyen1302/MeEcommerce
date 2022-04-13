@@ -19,6 +19,7 @@ export function productReducer(state = initialState, action) {
                 listProduct: {
                     status: constant.SUCCESS,
                     data: action.data,
+                    total_page: action.total_page,
                 },
             };
         }
@@ -29,6 +30,7 @@ export function productReducer(state = initialState, action) {
                 listProduct: {
                     status: constant.FAILURE,
                     data: [],
+                    total_page: 0,
                 }
             }
         }

@@ -63,6 +63,10 @@ i {
     color: var(--dark-blue-color);
 }
 
+h1, h2, h3, h4 {
+    font-weight: 500;
+}
+
 .border {
     box-shadow: var(--box-shadow);
     border-radius: var(--boder-radius);

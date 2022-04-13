@@ -53,6 +53,9 @@ a {
 i {
   color: var(--dark-blue-color); }
 
+h1, h2, h3, h4 {
+  font-weight: 500; }
+
 .border {
   box-shadow: var(--box-shadow);
   border-radius: var(--boder-radius);
@@ -453,40 +456,40 @@ i {
       padding: 10px;
       background: var(--dark-blue-color);
       color: white; }
-  .list-product-section .section-product {
-    cursor: pointer; }
-    .list-product-section .section-product .sort-by {
-      flex-direction: column;
-      align-items: flex-end;
-      padding-right: 10px;
-      position: relative; }
-      .list-product-section .section-product .sort-by-select {
-        background: var(--dark-blue-color);
-        grid-gap: 113px;
-        padding: 5px 10px; }
-        .list-product-section .section-product .sort-by-select h3,
-        .list-product-section .section-product .sort-by-select i {
-          color: white; }
-      .list-product-section .section-product .sort-by-option {
-        position: absolute;
-        top: 103%;
-        z-index: 1; }
-        .list-product-section .section-product .sort-by-option-item {
-          padding: 5px 106px 5px 10px;
-          background: white;
-          line-height: 30px;
-          opacity: 0;
-          visibility: hidden;
-          animation: topbottom1 0.5s ease forwards; }
-        .list-product-section .section-product .sort-by-option-item div:hover {
-          transform: scale(1.1);
-          font-weight: 500;
-          color: var(--dark-blue-color); }
-        .list-product-section .section-product .sort-by-option .show {
-          opacity: 1;
-          visibility: visible;
-          display: block;
-          animation: topbottom 0.5s ease forwards; }
+  .list-product-section .section-product .sort-by {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+    position: relative; }
+    .list-product-section .section-product .sort-by-select {
+      cursor: pointer;
+      background: var(--dark-blue-color);
+      grid-gap: 113px;
+      padding: 5px 10px; }
+      .list-product-section .section-product .sort-by-select h3,
+      .list-product-section .section-product .sort-by-select i {
+        color: white; }
+    .list-product-section .section-product .sort-by-option {
+      cursor: pointer;
+      position: absolute;
+      top: 103%;
+      z-index: 1; }
+      .list-product-section .section-product .sort-by-option-item {
+        padding: 5px 106px 5px 10px;
+        background: white;
+        line-height: 30px;
+        opacity: 0;
+        visibility: hidden;
+        animation: topbottom1 0.5s ease forwards; }
+      .list-product-section .section-product .sort-by-option-item div:hover {
+        transform: scale(1.1);
+        font-weight: 500;
+        color: var(--dark-blue-color); }
+      .list-product-section .section-product .sort-by-option .show {
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        animation: topbottom 0.5s ease forwards; }
 
 @keyframes topbottom {
   0% {
@@ -499,23 +502,24 @@ i {
     transform: translateY(0%); }
   100% {
     transform: translateY(-30%); } }
-    .list-product-section .section-product .products {
-      background: transparent;
-      box-shadow: none;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); }
-    .list-product-section .section-product-page {
-      justify-content: flex-end;
-      padding-right: 10px;
-      grid-gap: 20px;
-      font-weight: 700;
-      margin: 10px 0 30px 0; }
-      .list-product-section .section-product-page a {
-        background: white;
-        padding: 5px 15px; }
-      .list-product-section .section-product-page a:first-child {
-        background: var(--dark-blue-color);
-        color: white; }
+  .list-product-section .section-product .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); }
+  .list-product-section .section-product-page {
+    justify-content: flex-end;
+    padding-right: 10px;
+    grid-gap: 20px;
+    font-weight: 700;
+    margin: 10px 0 30px 0; }
+    .list-product-section .section-product-page button {
+      background: white;
+      padding: 8px 15px;
+      border-radius: 5px; }
+      .list-product-section .section-product-page button:disabled i {
+        color: var(--background-color); }
+    .list-product-section .section-product-page .active {
+      background: var(--dark-blue-color);
+      color: white; }
 
 .main-info {
   display: grid;
@@ -523,10 +527,10 @@ i {
   background: white; }
   .main-info-image {
     padding: 10px;
-    border-right: 2px solid var(--background-color);
     height: 415px; }
   .main-info-product {
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    border-left: 2px solid var(--background-color); }
     .main-info-product-rating {
       margin: 10px 0; }
       .main-info-product-rating i {
@@ -537,17 +541,21 @@ i {
       height: 2px;
       background: var(--blue-color); }
     .main-info-product-price {
-      margin: 10px 0 35px 0; }
+      justify-content: start; }
       .main-info-product-price big {
-        font-size: 35px;
+        font-size: 38px;
         font-weight: 900;
         color: red; }
+      .main-info-product-price .middle {
+        margin-left: 20px;
+        grid-gap: 5px;
+        align-items: start;
+        flex-direction: column; }
       .main-info-product-price .sale {
         background: red;
         color: white;
         padding: 3px 10px;
-        border-radius: 5px;
-        margin-left: 10px; }
+        border-radius: 5px; }
     .main-info-product-quality {
       justify-content: start;
       grid-gap: 20px;
@@ -574,16 +582,26 @@ i {
           .main-info-product-quality .middle button:hover {
             background: var(--blue-color);
             color: white; }
+          .main-info-product-quality .middle button:disabled {
+            background: var(--background-color);
+            color: #adb0b3; }
     .main-info-product-action {
       justify-content: start;
-      grid-gap: 20px; }
-      .main-info-product-action button {
+      grid-gap: 30px; }
+      .main-info-product-action .border {
         background: var(--blue-color);
         padding: 10px 50px;
         color: white; }
-        .main-info-product-action button:hover {
+        .main-info-product-action .border:hover {
           background: var(--rose-color);
           color: black; }
+      .main-info-product-action .add-heart span {
+        margin-left: 5px; }
+      .main-info-product-action .add-heart:hover {
+        color: var(--blue-color); }
+        .main-info-product-action .add-heart:hover span {
+          padding-bottom: 5px;
+          border-bottom: 1px solid var(--blue-color); }
 
 .detail-info {
   background: white;
@@ -615,3 +633,5 @@ i {
     .desc-info .middle .tab-active {
       color: var(--blue-color);
       border-bottom: 2px solid var(--blue-color); }
+  .desc-info .desc, .desc-info .review {
+    line-height: 25px; }

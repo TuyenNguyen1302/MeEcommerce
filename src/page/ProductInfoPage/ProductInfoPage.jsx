@@ -1,14 +1,14 @@
-import Footer from "../../component/Footer";
-import Header from "../../component/Header";
-import DescInfo from "./child/DescInfo";
-import DetailInfo from "./child/DetailInfo";
-import MainInfo from "./child/MainInfo";
-import SimilarInfo from "./child/SimilarInfo";
+import Footer from '../../component/Footer';
+import Header from '../../component/Header';
+import DescInfo from './child/DescInfo';
+import DetailInfo from './child/DetailInfo';
+import MainInfo from './child/MainInfo';
+import SimilarInfo from './child/SimilarInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { constant } from '../../constant';
 import { productAction } from '../../action/productAction';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 export default function ProductInfoPage() {
     let param = useParams();
@@ -35,7 +35,8 @@ export default function ProductInfoPage() {
                     name={infoProduct.data.name}
                     before_discount_price={infoProduct.data.before_discount_price}
                     after_discount_price={infoProduct.data.after_discount_price}
-                    sold={infoProduct.data.sold}>
+                    sold={infoProduct.data.sold}
+                    quantity={infoProduct.data.quantity}>
                 </MainInfo>
                 <DetailInfo
                     attributes={infoProduct.data.attributes}>

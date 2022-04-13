@@ -5,11 +5,11 @@
     background: white;
     &-image {
         padding: 10px;
-        border-right: 2px solid var(--background-color);
         height: 415px;
     }
     &-product {
         padding: 10px 20px;
+        border-left: 2px solid var(--background-color);
         &-rating {
             margin: 10px 0;
             i {
@@ -23,18 +23,23 @@
             background: var(--blue-color);
         }
         &-price {
-            margin: 10px 0 35px 0;
+            justify-content: start;
             big {
-                font-size: 35px;
+                font-size: 38px;
                 font-weight: 900;
                 color: red;
+            }
+            .middle {
+                margin-left: 20px;
+                grid-gap: 5px;
+                align-items: start;
+                flex-direction: column;
             }
             .sale {
                 background: red;
                 color: white;
                 padding: 3px 10px;
                 border-radius: 5px;
-                margin-left: 10px;
             }
         }
         &-quality {
@@ -44,7 +49,7 @@
             border-top: 2px solid var(--background-color);
             border-bottom: 2px solid var(--background-color);
             padding: 20px 0;
-            h3{
+            h3 {
                 margin-top: -10px;
                 margin-bottom: 10px;
             }
@@ -68,19 +73,35 @@
                         background: var(--blue-color);
                         color: white;
                     }
+                    &:disabled {
+                        background: var(--background-color);
+                        color: #adb0b3;
+                    }
                 }
             }
         }
         &-action {
             justify-content: start;
-            grid-gap: 20px;
-            button {
+            grid-gap: 30px;
+            .border {
                 background: var(--blue-color);
                 padding: 10px 50px;
                 color: white;
                 &:hover {
                     background: var(--rose-color);
                     color: black;
+                }
+            }
+            .add-heart {
+                span {
+                    margin-left: 5px;
+                }
+                &:hover {
+                    color: var(--blue-color);
+                    span {
+                        padding-bottom: 5px;
+                        border-bottom: 1px solid var(--blue-color);
+                    }
                 }
             }
         }
@@ -124,5 +145,8 @@
             color: var(--blue-color);
             border-bottom: 2px solid var(--blue-color);
         }
+    }
+    .desc, .review{
+        line-height: 25px;
     }
 }

@@ -1,10 +1,10 @@
 import { constant } from '../constant';
 
-function getListProduct() {
+function getListProduct(queryString) {
     const requestObj = {
         method: 'GET',
     };
-    return fetch(constant.API_URL + '/product/', requestObj)
+    return fetch(constant.API_URL + '/product?' + queryString, requestObj)
         .then((response) => response.json())
         .then((data) => {
             return data;
